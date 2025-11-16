@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global dark Spotify-ish + retro vibe */
+body {
+  @apply bg-slate-950 text-slate-100 font-sans;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+}
+
+/* subtle scanline */
+.scanlines {
+  position: relative;
+}
+.scanlines::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 100% 3px;
+  mix-blend-mode: soft-light;
+  opacity: 0.1;
+}
+
+/* glass card */
+.card-glass {
+  @apply rounded-2xl border border-white/5 bg-white/5 backdrop-blur-lg shadow-lg shadow-black/40;
+}
+
+.badge-pixel {
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary;
+}
+
+.xp-bar {
+  @apply h-2 rounded-full bg-slate-800 overflow-hidden;
+}
+.xp-bar-inner {
+  @apply h-full bg-accent;
+}
